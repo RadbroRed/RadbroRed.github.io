@@ -1,6 +1,6 @@
 .portfolio-header {
   position: relative;
-  background-image: url(images/header-bg.jpg);
+  background-color:#333;
 }
 
 .portfolio-header .mdl-layout__header-row {
@@ -12,6 +12,7 @@
   font-size: 14px;
   text-align: center;
   font-weight: 300;
+  margin-top:-72px;
 }
 
 .is-compact .mdl-layout__title span {
@@ -29,9 +30,9 @@
 .portfolio-logo {
   background: url(images/logo.png) 50% no-repeat;
   background-size: cover;
-  height: 150px;
-  width: 150px;
-  margin: auto auto 10px;
+  height: 269px;
+  width: 269px;
+  margin: 42px auto 0px;
 }
 
 .is-compact .portfolio-logo {
@@ -82,23 +83,23 @@
   padding-bottom: 0;
 }
 
-.portfolio-blog-card-full-bg {
-  background: url(images/example-blog03.jpg) center / cover;
+.portfolio-Silly Things-card-full-bg {
+  background: url(images/example-Silly Things03.jpg) center / cover;
 }
 
-.portfolio-blog-card-event-bg {
-  background: url(images/example-blog05.jpg) center / cover;
+.portfolio-Silly Things-card-event-bg {
+  background: url(images/example-Silly Things05.jpg) center / cover;
 }
 
-.portfolio-blog-card-strip-bg {
-  background: url(images/example-blog06.jpg) center / cover;
+.portfolio-Silly Things-card-strip-bg {
+  background: url(images/example-Silly Things06.jpg) center / cover;
 }
 
-.portfolio-blog-card-compact .mdl-card__title {
+.portfolio-Silly Things-card-compact .mdl-card__title {
   padding-bottom: 0;
 }
 
-.portfolio-blog-card-bg > .mdl-card__actions {
+.portfolio-Silly Things-card-bg > .mdl-card__actions {
   height: 52px;
   padding: 16px;
   background: rgba(0, 0, 0, 0.2);
@@ -109,9 +110,14 @@ img.article-image {
   height: auto;
 }
 
+.mdl-layout__content {
+  background-color: #444;
+}
+
 .portfolio-max-width {
   max-width: 900px;
   margin: auto;
+  background-color:#444
 }
 
 .portfolio-copy {
