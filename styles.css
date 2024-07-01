@@ -1,3 +1,4 @@
+/* basic styles */
 .portfolio-header {
   position: relative;
   background-color:#333;
@@ -6,6 +7,25 @@
 .portfolio-header .mdl-layout__header-row {
   padding: 0;
   justify-content: center;
+}
+
+/* animations */
+.portfolio-logo {
+  animation: rollIn 0.8s ease-out;
+  animation-fill-mode: forwards;
+}
+.portfolio-logo.animated {
+  animation: none;
+}
+@keyframes rollIn {
+  0% {
+      transform: translateY(-100%) rotate(-120deg);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0%) rotate(0deg);
+      opacity: 1;
+  }
 }
 
 .mdl-layout__title {
