@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Starfield Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #starfield-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="starfield-canvas"></canvas>
+    <script src="starfield.js"></script>
+    <script>
+        let sketch = function(p) {
+            p.setup = function() {
+                p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
+                p.canvas.id = 'starfield-canvas';
+                let speed = 1;
+                for (let i = 0; i < 800; i++) {
+                    p.stars[i] = new p.Star();
+                }
+            };
+            p.draw = function() {
+                p.background(0);
+                p.camera(0, 0, (p.height / 2) / p.tan(p.PI/6), 0, 0, 0, 0, 1, 0);
+                for (let i = 0; i < p.stars.length; i++) {
+                    p.stars[i].update();
+                    p.stars[i].show();
+                }
+            };
+            p.Star = function() {
+                this.x = p.random(-p.width, p.width);
+                this.y = p.random(-p.height, p.height);
+                this.z = p.random(p.width);
+                this.pz = this.z;
+                this.color = p.color(p.random(100, 200), p.random(100, 200), p.random(100, 200), p.random(100, 255));
+            };
+            p.Star.prototype.update = function() {
+                this.z = this.z - speed;
+                if (this.z < 1) {
+                    this.z = p.width;
+                    this.x = p.random(-p.width, p.width);
+                    this.y = p.random(-p.height, p.height);
+                    this.pz = this.z;
+                }
+            };
+            p.Star.prototype.show = function() {
+                p.fill(this.color);
+                p.noStroke();
+                let sx = p.map(this.x / this.z, 0, 1, 0, p.width);
+                let sy = p.map(this.y / this.z, 0, 1, 0, p.height);
+                let r = p.map(this.z, 0, p.width, 8, 0);
+                p.ellipse(sx, sy, r, r);
+                let px = p.map(this.x / this.pz, 0, 1, 0, p.width);
+                let py = p.map(this.y / this.pz, 0, 1, 0, p.height);
+                this.pz = this.z;
+                p.stroke(this.color);
+                p.line(px, py, sx, sy);
+            };
+        };
+        let p = new p5(sketch);
+    </script>
+</body>
+</html>

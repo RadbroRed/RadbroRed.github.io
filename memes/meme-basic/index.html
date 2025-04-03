@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$Meme - The Most Adorable Cat on Solana</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('cat.jpg');
+            background-repeat: repeat;
+            background-size: 200px 300px;
+            position: relative; 
+        }
+        canvas#overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; 
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://radbrored.github.io/memes">Home</a></li>
+                <li><a href="#">Chart</a></li>
+                <li><a href="#">How to Get $Meme</a></li>
+            </ul>
+        </nav>
+    </header>
+    <canvas id="overlay"></canvas>
+    <main>
+        <section>
+            <img src="cat.jpg" style="margin-top: 42px; height: 300px; width: auto;" class="zoom-effect">
+            <p>CA: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+            <h1>BUY $Meme</h1>
+        </section>
+        <div style="margin-top: 42px !important; background-color: black; color: white; width: 100%; padding: 10px; box-sizing: border-box;">
+            <p>$Meme is the most adorable cat on Solana, on a quest to reach astronomical values!</p>
+        </div>
+        <section>
+            <h2>MEME GENERATOR</h2>
+            <p>SOON!!!</p>
+        </section>
+        <section>
+            <h2>MORE PROMISES INCOMING</h2>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="https://radbrored.github.io/memes">Home</a></li>
+                <li><a href="#">Chart</a></li>
+                <li><a href="#">How to Get $Meme</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script>
+        const canvas = document.getElementById('overlay');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.42)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    </script>
+</body>
+</html>
